@@ -1,0 +1,135 @@
+# Todo Application
+
+This is a full-stack Todo application where users can manage their tasks with the ability to:
+- Create, read, update, and delete todos.
+- Add and manage notes for each todo.
+- Filter and sort todos based on various criteria such as priority, users, and creation date.
+- Display detailed information about each todo, including associated users, notes, and tags.
+
+## Features:
+- **Create Todo**: Add a new todo with a title, description, priority, users, and notes.
+- **View Todos**: See a list of all todos with options to filter and sort them by tags, users, or creation date.
+- **Edit Todo**: Edit existing todos and update fields like name, description, priority, users, and notes.
+- **Delete Todo**: Delete any todo item.
+- **Detailed View**: View a detailed perspective of each todo, including its notes, priority, and users.
+- **Notes Management**: Add, update, or remove notes associated with a specific todo.
+
+## Technologies Used:
+- **Frontend**: React.js, react-router-dom, react-select for multi-select dropdowns
+- **Backend**: Node.js, Express.js
+- **Database**: MySQL
+- **State Management**: React useState and useEffect hooks
+- **Styling**: CSS (Custom styles)
+
+## Backend Setup (API):
+
+1. **Set up the database**:
+    - Create a new MySQL database and run the following SQL to create the `todos` table:
+
+    ```sql
+    CREATE TABLE `todos` (
+      `id` int NOT NULL AUTO_INCREMENT,
+      `name` varchar(250) NOT NULL,
+      `description` text NOT NULL,
+      `tag_users` text,
+      `priority` tinyint(1) DEFAULT NULL,
+      `notes` text,
+      `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (`id`)
+    );
+    ```
+
+2. **Environment Variables**:
+    - Create a `.env` file in the root directory and set the following environment variables:
+    ```env
+    REACT_APP_SERVER_URL_TODO=http://localhost:5000/todos
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=yourpassword
+    DB_NAME=yourdatabase
+    ```
+
+3. **Start the server**:
+    ```bash
+    npm start
+    ```
+    The backend server will run on `http://localhost:5000`.
+
+## Frontend Setup (React App):
+
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Start the React App**:
+    ```bash
+    npm start
+    ```
+    The React app will run on `http://localhost:3000`.
+
+## Routes (API):
+
+### 1. **GET /todos** - Fetch all todos
+- Fetch all todos with basic info.
+
+### 2. **POST /todos** - Create a new todo
+- Request Body:
+    ```json
+    {
+        "name": "Todo name",
+        "description": "Description of the todo",
+        "priority": 1,  
+        "user": "1,2", 
+        "desc": "Detailed description of the todo"
+    }
+    ```
+
+### 3. **GET /todos/:todo_id** - Fetch a specific todo by ID
+- Fetch detailed information for a specific todo, including its notes, users, and tags.
+
+### 4. **PUT /todos/:todo_id** - Update a specific todo
+- Request Body:
+    ```json
+    {
+        "name": "Updated Todo name",
+        "description": "Updated description",
+        "priority": 2, 
+        "user": "1,2,4", 
+        "notes": "Updated notes"
+    }
+    ```
+
+### 5. **DELETE /todos/:todo_id** - Delete a specific todo
+- Deletes a todo based on its ID.
+
+### 6. **PATCH /todos/note/:todo_id** - Add or update notes for a specific todo
+- Request Body:
+    ```json
+    {
+        "notes": "Note for the todo"
+    }
+    ```
+
+## Frontend Components:
+
+### 1. **AllTodos Component**:
+- Displays a list of todos with options to:
+    - Sort by creation date, priority, etc.
+    - Filter by tags, users, or priority.
+    - Add notes to todos.
+    - Delete todos.
+    - View detailed information about a todo.
+
+### 2. **TodoDetails Component**:
+- Displays detailed information for a selected todo, including its name, description, priority, associated users, and notes.
+- Allows editing of todo details.
+- Tags are displayed as multi-select dropdowns using **react-select**.
+
+## How to Use:
+
+1. **View Todos**: Visit the home page to see a list of todos.
+2. **Create Todo**: Click on the "Create Todo" button to add a new todo.
+3. **Edit Todo**: In the todo details view, you can edit the todo details.
+4. **Add Notes**: You can add or update notes for any todo.
+5. **Sort and Filter**: Use the sorting and filtering options to display todos by specific criteria.
