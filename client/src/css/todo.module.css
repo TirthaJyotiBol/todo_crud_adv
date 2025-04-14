@@ -1,0 +1,83 @@
+.todo_form {
+    width: 100%;
+    max-width: 600px;
+    margin: 5% auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.todo_div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.todo_div label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.todo_div input,
+.todo_div select,
+.todo_div textarea {
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo_div input:focus,
+.todo_div select:focus,
+.todo_div textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+.todo_div textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit_button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+.submit_button:hover {
+    background-color: #0056b3;
+}
+
+.react_select {
+    font-size: 1rem;
+    margin-top: 5px;
+    z-index: 10;
+}
+
+.react_select > div {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.react_select > div:hover {
+    border-color: #007bff;
+}

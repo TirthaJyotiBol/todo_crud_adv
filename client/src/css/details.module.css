@@ -1,0 +1,152 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #f4f7fa, #e2ecf3);
+    padding: 20px;
+}
+
+.card {
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.infoGroup {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.infoItem {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.priority1 {
+    color: red;
+    font-weight: bold;
+}
+.priority2 {
+    color: orange;
+    font-weight: bold;
+}
+.priority3 {
+    color: green;
+    font-weight: bold;
+}
+
+.tagContainer {
+    margin-top: 15px;
+}
+
+.tags {
+    margin-top: 8px;
+}
+
+.tag {
+    background-color: #e1f0ff;
+    color: #007bff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-right: 6px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.notesBox {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #ccc;
+    border-radius: 8px;
+    color: #333;
+    font-style: italic;
+}
+
+.actions {
+    margin-top: 25px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.backButton {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.backButton:hover {
+    background-color: #0056b3;
+}
+
+.loading {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.editForm input, .editForm textarea, .editForm select {
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.saveButton, .cancelButton,.editButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.saveButton {
+    background-color: #28a745;
+    color: white;
+}
+.editButton{
+    background-color: #28a745;
+    color: white;
+}
+.saveButton:hover {
+    background-color: #218838;
+}
+
+.cancelButton {
+    background-color: #ccc;
+    color: black;
+}
+
+.cancelButton:hover {
+    background-color: #999;
+}

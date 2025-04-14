@@ -1,0 +1,281 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.home_btn{
+    padding: 12px 20px;
+    background-color: #56a908;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+    text-decoration: none !important;
+}
+
+/* Container for the whole page */
+.todoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    overflow: hidden; /* hide main scrollbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+
+/* Header Title */
+.heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Home Button */
+.home_btn {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+.home_btn:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollable content area */
+.container {
+    flex: 1;
+    overflow-y: auto;
+    width: 50%;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 75vh !important;
+    max-height: 65vh !important;
+}
+
+/* Individual Todo Card */
+.todoCard {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 23px;
+}
+.todoCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Title & Description */
+.todoTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    cursor: pointer;
+    width: max-content;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+.todoDescription {
+    margin-top: 17px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Tags */
+.tags {
+    margin-top: 10px;
+}
+.tagChip {
+    background-color: #e0ecff;
+    color: #0056b3;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+/* Meta Info */
+.meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Notes */
+.notes {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #ccc;
+    font-style: italic;
+}
+
+/* Action Buttons */
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.noteButton,
+.editButton,
+.detailsButton,
+.deleteButton {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.detailsButton{
+    background-color: #0683ff;
+    color: white;
+    text-decoration: none;
+}
+
+.editButton {
+    background-color: #28a745;
+    color: white;
+}
+.editButton:hover {
+    background-color: #218838;
+}
+
+.deleteButton {
+    background-color: #dc3545;
+    color: white;
+}
+.deleteButton:hover {
+    background-color: #c82333;
+}
+
+/* Loading */
+.loading {
+    font-size: 1.2rem;
+    color: #555;
+    padding-top: 50px;
+}
+
+/* Scrollbar customization (optional) */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalBox {
+    background-color: #fff;
+    padding: 25px;
+    width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modalBox textarea {
+    margin: auto;
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.saveNote {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cancelNote {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.controls {
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.selectGroup {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.selectGroup label {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #555;
+}
+
+.selectGroup select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0.95rem;
+}
